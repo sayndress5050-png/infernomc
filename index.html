@@ -1,57 +1,41 @@
-<div class="news-content">
-                        <h4>Вайп ада</h4>
-                        <p>Мир ада был полностью пересоздан.</p>
-                    </div>
+<section class="section" id="shop">
+        <div class="container">
+            <h2 style="text-align:center; font-family:Montserrat; font-size: 2.5rem; margin-bottom: 40px;">ДОНАТ УСЛУГИ</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>TITAN</h3>
+                    <span class="price">299 ₽</span>
+                    <p>• Полёт /fly<br>• Набор ресурсов /kit titan<br>• Цветной префикс</p>
+                    <button class="btn" style="width:100%; margin-top:20px; padding: 12px;">КУПИТЬ</button>
+                </div>
+                <div class="card" style="border-color: var(--primary)">
+                    <h3>OVERLORD</h3>
+                    <span class="price">799 ₽</span>
+                    <p>• Режим бога /god<br>• Доступ к админ-чату<br>• Личный менеджер</p>
+                    <button class="btn" style="width:100%; margin-top:20px; padding: 12px;">КУПИТЬ</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="support" id="support">
+    <section class="section" style="background: #0f0f0f;">
         <div class="container">
-            <h2 class="section-title">Поддержка</h2>
-            <div class="support-box fade-in">
-                <form id="supportForm">
-                    <label>Никнейм:</label>
-                    <input type="text" placeholder="Ваш ник" required>
-                    <label>Сообщение:</label>
-                    <textarea rows="4" placeholder="Опишите проблему..." required></textarea>
-                    <button type="submit" class="buy-btn" style="margin-top: 20px;">Отправить</button>
+            <h2 style="text-align:center; font-family:Montserrat; margin-bottom: 40px;">ТЕХПОДДЕРЖКА</h2>
+            <div style="max-width: 600px; margin: 0 auto; background: var(--card); padding: 40px; border-radius: 20px;">
+                <form>
+                    <label>Твой никнейм</label>
+                    <input type="text" placeholder="Введите ник...">
+                    <label>Суть проблемы</label>
+                    <textarea rows="4" placeholder="Опишите ситуацию..."></textarea>
+                    <button type="button" class="btn" style="width: 100%;" onclick="alert('Отправлено!')">Отправить тикет</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 InfernoMC. Не связано с Mojang AB.</p>
-        </div>
+    <footer style="padding: 40px; text-align: center; opacity: 0.5;">
+        <p>&copy; 2026 INFERNOMC. Сделано с любовью к игрокам.</p>
     </footer>
 
-    <script>
-        // Анимация при скролле
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Скролл шапки
-        window.onscroll = () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        };
-
-        // Имитация онлайна (можно заменить на реальный API из прошлых сообщений)
-        document.getElementById('playerCount').innerText = Math.floor(Math.random() * 100) + 200;
-
-        // Поддержка
-        document.getElementById('supportForm').onsubmit = (e) => {
-            e.preventDefault();
-            alert('Тикет создан! Ожидайте ответа.');
-        };
-    </script>
 </body>
 </html>
