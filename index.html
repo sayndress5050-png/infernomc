@@ -1,0 +1,57 @@
+<div class="news-content">
+                        <h4>Вайп ада</h4>
+                        <p>Мир ада был полностью пересоздан.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="support" id="support">
+        <div class="container">
+            <h2 class="section-title">Поддержка</h2>
+            <div class="support-box fade-in">
+                <form id="supportForm">
+                    <label>Никнейм:</label>
+                    <input type="text" placeholder="Ваш ник" required>
+                    <label>Сообщение:</label>
+                    <textarea rows="4" placeholder="Опишите проблему..." required></textarea>
+                    <button type="submit" class="buy-btn" style="margin-top: 20px;">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 InfernoMC. Не связано с Mojang AB.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Анимация при скролле
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Скролл шапки
+        window.onscroll = () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        };
+
+        // Имитация онлайна (можно заменить на реальный API из прошлых сообщений)
+        document.getElementById('playerCount').innerText = Math.floor(Math.random() * 100) + 200;
+
+        // Поддержка
+        document.getElementById('supportForm').onsubmit = (e) => {
+            e.preventDefault();
+            alert('Тикет создан! Ожидайте ответа.');
+        };
+    </script>
+</body>
+</html>
